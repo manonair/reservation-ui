@@ -15,6 +15,7 @@ export class AddReservationComponent implements OnInit {
   }
 
   onSubmit(){
+    console.log('reservation component  OnSubmit')
     const reservation={
  
       tableReservationId: 3, 
