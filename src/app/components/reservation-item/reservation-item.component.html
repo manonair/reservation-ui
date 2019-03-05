@@ -1,8 +1,12 @@
 <div>
-  <p>
-    <input type="checkbox"/>
-    {{reservation.restaurantName}} 
+  <ul class="reservationItems">
+    <li>
+        <span class="badge"> 
+          <input type="checkbox"/>
+        </span>
+    {{reservation.restaurantName}} | {{reservation.tableType}} |{{reservation.tableDesc}} |    {{reservation.status}} |    {{reservation.bookingId}} 
     <button class="del" (click)="onDelete(reservation)">X</button>
-  </p>
+    </li>
+  </ul>
 </div>
 

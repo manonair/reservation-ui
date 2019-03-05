@@ -11,7 +11,7 @@ export class ReservationItemComponent implements OnInit {
 
   @Input() reservation:Reservation;
   @Output()deleteReservation:EventEmitter<Reservation> = new EventEmitter();
-
+  @Output()editReservation:EventEmitter<Reservation> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -21,5 +21,10 @@ export class ReservationItemComponent implements OnInit {
     //console.log("onDelete");
     this.deleteReservation.emit(reservation)
   }
+
+  /* onEdit(reservation:Reservation ){
+    console.log("onEdit");
+    this.editReservation.emit(reservation)
+  } */
 
 }

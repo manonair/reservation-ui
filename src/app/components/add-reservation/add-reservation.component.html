@@ -1,5 +1,81 @@
-<form  class="form" (ngSubmit)="onSubmit()">
-  <h1>Add Reservation</h1>
-  <input type="text" name="title" [(ngModel)]="title" placeholder="Add Reservation" >
-   <input type="submit" value="Submit" class="btn">
-</form>
+<div class="col-md-6">
+  <form class="form" (ngSubmit)="onSubmit()">
+    <h1>Add Reservation</h1>
+
+    <div *ngIf="reservation">
+
+      <h2>{{reservation.restaurantName | uppercase}} Details</h2>
+
+      <div class="form-group">
+          
+        <input type="hidden" name="reservation.tableReservationId" [(ngModel)]="reservation.tableReservationId"
+           >
+      </div>
+
+      <div class="form-group">
+          <label>restaurantName</label>
+        <input type="text" name="reservation.restaurantName" [(ngModel)]="reservation.restaurantName"
+          placeholder="Add Reservation">
+      </div>
+      <div class="form-group">
+          <label>reservation name</label>
+        <input type="text" name="reservation.name" [(ngModel)]="reservation.name" placeholder="name">
+      </div>
+
+      <div class="form-group">
+        <input type="hidden" name="reservation.tableId" [(ngModel)]="reservation.tableId" placeholder="Add tableId">
+      </div>
+      <div class="form-group">
+          <label>tableType</label>
+        <input type="text" name="reservation.tableType" [(ngModel)]="reservation.tableType" placeholder="Add tableType">
+      </div>
+      <div class="form-group">
+          <label>tableDesc</label>
+        <input type="text" name="reservation.tableDesc" [(ngModel)]="reservation.tableDesc" placeholder="Add tableDesc">
+      </div>
+
+
+      <div class="form-group">
+          <label>bookingStart</label>
+        <input type="datetime-local" ng-model="string" min="2019-01-01" max="2023-12-31" placeholder="yyyy-MM-dd"
+          name="reservation.bookingStart" [(ngModel)]="reservation.bookingStart" required>
+      </div>
+
+      <div class="form-group">
+          <label>bookingEnd</label>
+        <input type="datetime-local" ng-model="string" min="2019-01-01" max="2023-12-31" placeholder="yyyy-MM-dd"
+          name="reservation.bookingEnd" [(ngModel)]="reservation.bookingEnd">
+      </div>
+
+      <div class="form-group">
+          <label>capacity</label>
+        <input type="text" name="reservation.capacity" [(ngModel)]="reservation.capacity" placeholder="Add capacity">
+      </div>
+
+      <div class="form-group">
+          <label>status</label>
+        <input type="" name="reservation.status" [(ngModel)]="reservation.status" placeholder="Add status">
+      </div>
+
+      <div class="form-group">
+        <input type="hidden" name="reservation.restaurantId" [(ngModel)]="reservation.restaurantId"
+          placeholder="Add restaurantId">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="reservation.bookingId" [(ngModel)]="reservation.bookingId" placeholder="Add bookingId">
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="reservation.userId" [(ngModel)]="reservation.userId" placeholder="Add userId">
+      </div>
+
+
+      <input type="submit" value="Submit" class="btn btn-primary">
+
+    </div>
+
+
+
+  </form>
+</div>

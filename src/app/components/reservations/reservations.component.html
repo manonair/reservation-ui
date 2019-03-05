@@ -1,5 +1,11 @@
-<app-add-reservation (addReservation) ="addReservation($event)"></app-add-reservation>
-<app-reservation-item  *ngFor = "let reservation of reservations"  
+
+<app-reservation-item  *ngFor = "let reservation of reservations" 
+[class.selected]="reservation === selectedReservation"  
 [reservation]="reservation" 
-(deleteReservation)="deleteReservation($event)" >
+(deleteReservation)="deleteReservation($event)" 
+(click)="editReservation(reservation)" 
+>
+
 </app-reservation-item>
+
+<app-add-reservation [reservation]="selectedReservation" ></app-add-reservation>

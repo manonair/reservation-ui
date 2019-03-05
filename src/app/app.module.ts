@@ -8,7 +8,7 @@ import { ReservationItemComponent } from './components/reservation-item/reservat
 import { HeadderComponent } from './components/headder/headder.component';
 import { AddReservationComponent } from './components/add-reservation/add-reservation.component';
 import {FormsModule} from '@angular/forms'
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
