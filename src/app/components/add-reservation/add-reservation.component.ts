@@ -1,5 +1,6 @@
 import { Component, OnInit , EventEmitter, Output, Input} from '@angular/core';
 import { Reservation } from 'src/app/model/Reservation';
+import { ReservationService } from 'src/app/services/reservation.service';
 
 @Component({
   selector: 'app-add-reservation',
@@ -9,33 +10,27 @@ import { Reservation } from 'src/app/model/Reservation';
 export class AddReservationComponent implements OnInit {
 
   @Output() addReservation :EventEmitter<any> =new EventEmitter();
-  title:string;
-  @Input()  reservation: Reservation;
-  constructor() { }
+
+  //private reservationService: ReservationService;
+  @Input() reservation: Reservation;
+  constructor(private reservationService : ReservationService) { }
 
   ngOnInit() {
   }
 
+
+  /* onEdit(reservation:Reservation ){
+    console.log("addReservation");
+    this.addReservation.emit(reservation)
+  } */
+
   onSubmit(){
-    console.log('reservation component  OnSubmit  {reservation.tableDesc} ');
-    const outParam=this.reservation;
-    /* {
- 
-      tableReservationId:1,
-      name:'1-1-1-1',
-      tableId:1,
-      tableType:'TABLE4',
-      tableDesc:'4 SEATER',
-      capacity:4,
-      status:'A',
-      bookingStart : new Date()  ,
-      bookingEnd : new Date() ,
-      restaurantId:1,
-      restaurantName:'DUREY',
-      bookingId:'1-1-1-1',
-      userId:1,
-   } */
-  this.addReservation.emit(outParam)
+    console.log( this.reservation.tableDesc  );
+   const outParam:Reservation = this.reservation;
+  this.reservationService.addReservation(outParam)
+  .subscribe();
+  console.log( 'Completed onSubmit');
+     
   }
 
 

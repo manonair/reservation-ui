@@ -22,9 +22,5 @@ export class ReservationItemComponent implements OnInit {
     this.deleteReservation.emit(reservation)
   }
 
-  /* onEdit(reservation:Reservation ){
-    console.log("onEdit");
-    this.editReservation.emit(reservation)
-  } */
 
 }

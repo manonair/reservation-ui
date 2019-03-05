@@ -29,13 +29,13 @@ export class ReservationsComponent implements OnInit {
     this.reservationService.deleteReservation(reservation).subscribe();
   }
 
-  addReservation(reservation:Reservation){
+ /*  addReservation(reservation:Reservation){
     console.log('Add  Reservation Service CAll  !');
     this.reservationService.addReservation(reservation)
     .subscribe(
       reservation=>this.reservations.push(reservation)
           );
-  }
+  } */
 
   editReservation(reservation:Reservation){
     console.log('Edit Reservation ! @ Add Page');
