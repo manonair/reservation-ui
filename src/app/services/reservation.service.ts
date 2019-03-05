@@ -53,7 +53,7 @@ export class ReservationService {
 
 
    addReservation(reservation:Reservation):Observable<Reservation>{
-    const url = `${this.reservationURL}`;
+    const url = `${this.reservationURL}/add`;
     console.log('Add URL: '+url);
     return this.http.post<Reservation>(url, reservation,httpOptions);
      
