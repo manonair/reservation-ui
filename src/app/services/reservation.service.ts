@@ -24,7 +24,7 @@ export class ReservationService {
 
   reservationURL:string='http://localhost:1111/api/roster-microservice/reservation';
   //reservationURL:string='https://my-json-server.typicode.com/manonair/demo/tableReservations';
-  allReservations :string= '/all';
+  allReservations :string= 'all';
   constructor(private http:HttpClient) { }
 
   getReservations():Observable<Reservation[]>{

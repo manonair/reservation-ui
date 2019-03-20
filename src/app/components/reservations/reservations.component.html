@@ -1,11 +1,16 @@
+<div class="row" *ngIf="reservations">
+    <div class="col s12 m7">
+        <div class="card">
+            <app-reservation-item  *ngFor = "let reservation of reservations" 
+            [class.selected]="reservation === selectedReservation"  
+            [reservation]="reservation" 
+            (deleteReservation)="deleteReservation($event)" 
+            (click)="editReservation(reservation)" 
+            >
+            </app-reservation-item>
+</div>
+</div>
+</div>
 
-<app-reservation-item  *ngFor = "let reservation of reservations" 
-[class.selected]="reservation === selectedReservation"  
-[reservation]="reservation" 
-(deleteReservation)="deleteReservation($event)" 
-(click)="editReservation(reservation)" 
->
-
-</app-reservation-item>
 
 <app-add-reservation [reservation]="selectedReservation" ></app-add-reservation>
